@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors'
 const app=express();
 const PORT=5000;
+const MONGODB_CONNECTION="mongodb+srv://arsath8597:123@cluster0.zzb60ap.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 app.use(cors())
 app.use(bodyParser.json())
 
