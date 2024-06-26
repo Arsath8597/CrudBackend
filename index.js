@@ -4,9 +4,14 @@ import connectDB from "./lib/db.js";
 import bodyParser from 'body-parser';
 import cors from 'cors'
 const app=express();
-const PORT=5000;
-const MONGODB_CONNECTION="mongodb+srv://arsath8597:123@cluster0.zzb60ap.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-app.use(cors())
+const PORT=2717;
+app.use(cors({ 
+    origin: ['http://localhost:3000'],
+    methods:["POST","GET"],
+    credentials:true
+
+    
+ },));
 app.use(bodyParser.json())
 
 app.use(express.json({ limit: "100mb" })); // Corrected middleware
