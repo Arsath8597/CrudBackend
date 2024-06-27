@@ -6,14 +6,14 @@ import cors from 'cors'
 const app=express();
 const PORT=2717;
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://crud-product-menagement-c9ozfqpxv-arsath8597s-projects.vercel.app'); // Update to match the domain you will make the request from
+    res.header('Access-Control-Allow-Origin', 'https://crud-product-menagement.vercel.app/'); // Update to match the domain you will make the request from
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
 
 // Allow requests from multiple origins
 const allowedOrigins = [
-  'https://crud-product-menagement-c9ozfqpxv-arsath8597s-projects.vercel.app'
+  'https://crud-product-menagement.vercel.app'
 ];
 
 app.use(cors({
