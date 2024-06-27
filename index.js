@@ -5,6 +5,11 @@ import bodyParser from 'body-parser';
 import cors from 'cors'
 const app=express();
 const PORT=2717;
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Update to match the domain you will make the request from
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
 app.use(cors({ 
     origin: ['http://localhost:3000'],
     methods:["POST","GET"],
