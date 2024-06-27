@@ -13,7 +13,6 @@ app.use((req, res, next) => {
 
 // Allow requests from multiple origins
 const allowedOrigins = [
-  'http://localhost:3000',
   'https://crud-product-menagement-c9ozfqpxv-arsath8597s-projects.vercel.app'
 ];
 
