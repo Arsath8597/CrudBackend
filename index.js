@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-    origin: 'http://localhost:3000' // Update this to match the domain you will make the request from
+    origin: 'https://crud-product-menagement-c9ozfqpxv-arsath8597s-projects.vercel.app' // Update this to match the domain you will make the request from
   }));
 app.use(bodyParser.json())
 
