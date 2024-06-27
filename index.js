@@ -11,8 +11,22 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(cors({
-    origin: 'https://crud-product-menagement-c9ozfqpxv-arsath8597s-projects.vercel.app' // Update this to match the domain you will make the request from
+// Allow requests from multiple origins
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://crud-product-menagement-c9ozfqpxv-arsath8597s-projects.vercel.app'
+  ];
+  
+  app.use(cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    }
   }));
 app.use(bodyParser.json())
 
